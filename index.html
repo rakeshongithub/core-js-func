@@ -14,6 +14,26 @@
         ];
     </script>
     <script src="scripts.js"></script>
+    <script>
+    // Display Util Function
+    function display(title, fn){
+        console.group(title);
+        fn();
+        console.groupEnd();
+    }
+
+    // Execute Model Functions
+    display('Function Programing', function(){
+        display('_.chunk(array, [size])', function(){
+            var newArr = __.chunk([1,2,3,4,5,6,7,8,9,[11,22,33,44,55,66,77,88,99]], 4)
+            console.log(newArr)
+        })    
+        display('_.compact(array)', function(){
+            var newArr = __.compactDeep([0, 1, false, 2, '', 3, [false, 22, '', 33], 4, false, 7])
+            console.log(newArr)
+        })    
+    })
+    </script>
 </head>
 <body>
     

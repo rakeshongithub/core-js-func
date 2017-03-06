@@ -27,11 +27,15 @@
         display('_.chunk(array, [size])', function(){
             var newArr = __.chunk([1,2,3,4,5,6,7,8,9,[11,22,33,44,55,66,77,88,99]], 4)
             console.log(newArr)
-        })    
+        });    
         display('_.compact(array)', function(){
+            var newArr = __.compact([0, 1, false, 2, '', 3, [false, 22, '', 33], 4, false, 7])
+            console.log(newArr)
+        });    
+        display('_.compactDeep(array)', function(){
             var newArr = __.compactDeep([0, 1, false, 2, '', 3, [false, 22, '', 33], 4, false, 7])
             console.log(newArr)
-        })    
+        });    
     })
     </script>
 </head>

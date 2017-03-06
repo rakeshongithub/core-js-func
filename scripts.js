@@ -88,4 +88,17 @@ __.drop = function(array, size) {
     return array.slice((size === undefined) ? 1 : size);
 }
 
+// 6. __.dropRight(array, [n=1]): Creates a slice of array with n elements dropped from the beginning.
+__.dropRight = function(array, size) {
+    // check arguments length
+    __.isArrayLength(array);
+    var end;
+    if(size === undefined) {
+        end = -1;
+    } else if(size > 0 ) {
+        end = -size
+    }
+    return array.slice(0, end);
+}
+
 }(window, document, undefined));

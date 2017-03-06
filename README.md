@@ -9,6 +9,7 @@ JavaScript functional programing.
 [__.concat](https://github.com/rakeshongithub/core-js-func#__concatarray-values)<br/>
 [__.difference](https://github.com/rakeshongithub/core-js-func#__differencearray-values)<br/>
 [__.drop](https://github.com/rakeshongithub/core-js-func#__droparray-n1)<br/>
+[__.dropRight](https://github.com/rakeshongithub/core-js-func#__droprightarray-n1)<br/>
 
 
 #### `__.chunk(array, [size])`
@@ -85,5 +86,24 @@ __.drop([1, 2, 3], 5);
 // => []
  
 __.drop([1, 2, 3], 0);
+// => [1, 2, 3]
+```
+
+
+#### `__.dropRight(array, [n=1])`
+Creates a slice of array with n elements dropped from the end.
+
+##### Example
+```javascript
+__.dropRight([1, 2, 3]);
+// => [1, 2]
+ 
+__.dropRight([1, 2, 3], 2);
+// => [1]
+ 
+__.dropRight([1, 2, 3], 5);
+// => []
+ 
+__.dropRight([1, 2, 3], 0);
 // => [1, 2, 3]
 ```

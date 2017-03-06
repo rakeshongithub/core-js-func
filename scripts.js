@@ -19,7 +19,7 @@ __.isArgumentsLength = function(){
 
 // ### MODEL FUNCTION ###
 
-// 1. __.chunk: Creates an array of elements split into groups the length of size. If array can't be split evenly, the final chunk will be the remaining elements.
+// 1. __.chunk(array, [size]): Creates an array of elements split into groups the length of size. If array can't be split evenly, the final chunk will be the remaining elements.
 __.chunk = function(array, size) {
     // check for Array length
     __.isArrayLength(array);
@@ -33,7 +33,7 @@ __.chunk = function(array, size) {
     return chunkedArr;
 }
 
-// 2. __.compact: Creates an array with all falsey values removed. The values false, null, 0, "", undefined, and NaN are falsey.
+// 2. __.compact(array): Creates an array with all falsey values removed. The values false, null, 0, "", undefined, and NaN are falsey.
 __.compact = function(array) {
     // check for Array length
     __.isArrayLength(array);
@@ -44,7 +44,7 @@ __.compact = function(array) {
     });
 }
 
-// 3. __.compactDeep: Creates an array with all falsey values removed. The values false, null, 0, "", undefined, and NaN are falsey.
+// 3. __.compactDeep(array): Creates an array with all falsey values removed. The values false, null, 0, "", undefined, and NaN are falsey.
 __.compactDeep = function(array) {
     // check for Array length
     __.isArrayLength(array);
@@ -57,13 +57,28 @@ __.compactDeep = function(array) {
     return compactArr;
 }
 
-// 4. __.concat: Creates a new array concatenating array with any additional arrays and/or values.
+// 4. __.concat(array, [values]): Creates a new array concatenating array with any additional arrays and/or values.
 __.concat = function() {
     // check arguments length
     __.isArgumentsLength();
     for(var i = 0; i < arguments.length; i++) {
         return [].concat.apply([], arguments);
     }
+}
+
+// 4. __.difference(array, [values]): Creates an array of array values not included in the other given arrays using SameValueZero for equality comparisons. The order and references of result values are determined by the first array.
+__.difference = function() {
+    // check arguments length
+    __.isArgumentsLength();
+    var uniqueArr = [];
+    var array = arguments[0];
+    var remainArguments = [].concat.apply([], arguments).slice(array.length)
+    array.filter(function(item, pos){
+        if(remainArguments.indexOf(item) === -1){
+        uniqueArr.push(item);
+        }
+    });
+    return uniqueArr;
 }
 
 }(window, document, undefined));

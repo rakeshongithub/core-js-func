@@ -24,21 +24,25 @@
 
     // Execute Model Functions
     display('Function Programing', function(){
-        display('_.chunk(array, [size])', function(){
+        display('__.chunk(array, [size])', function(){
             var newArr = __.chunk([1,2,3,4,5,6,7,8,9,[11,22,33,44,55,66,77,88,99]], 4)
             console.log(newArr)
         });    
-        display('_.compact(array)', function(){
+        display('__.compact(array)', function(){
             var newArr = __.compact([0, 1, false, 2, '', 3, [false, 22, '', 33], 4, false, 7])
             console.log(newArr)
         });    
-        display('_.compactDeep(array)', function(){
+        display('__.compactDeep(array)', function(){
             var newArr = __.compactDeep([0, 1, false, 2, '', 3, [false, 22, '', 33], 4, false, 7])
             console.log(newArr)
         });    
-        display('_.concat(array, [values])', function(){
+        display('__.concat(array, [values])', function(){
             var array = [1];
             var newArr = __.concat(array, 2, [3], [[4]], 0, [[1,2,3,4]], false, [false, 22, '', 33])
+            console.log(newArr)
+        });    
+        display('__.difference(array, [values])', function(){
+            var newArr = __.difference([2, 1, 2, 9,88], 2, [3], [[4]], 0, [1,2,3,4], false, [false, 22, '', 33])
             console.log(newArr)
         });    
     })

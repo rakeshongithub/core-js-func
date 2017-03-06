@@ -10,6 +10,13 @@ __.isArrayLength = function(array){
     }
 }
 
+__.isArgumentsLength = function(){
+    var length = arguments.length;
+    if (!length) {
+        return [];
+    }
+}
+
 // ### MODEL FUNCTION ###
 
 // 1. __.chunk: Creates an array of elements split into groups the length of size. If array can't be split evenly, the final chunk will be the remaining elements.
@@ -48,6 +55,15 @@ __.compactDeep = function(array) {
         }
     });
     return compactArr;
+}
+
+// 4. __.concat: Creates a new array concatenating array with any additional arrays and/or values.
+__.concat = function() {
+    // check arguments length
+    __.isArgumentsLength();
+    for(var i = 0; i < arguments.length; i++) {
+        return [].concat.apply([], arguments);
+    }
 }
 
 }(window, document, undefined));

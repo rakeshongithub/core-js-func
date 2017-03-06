@@ -36,6 +36,11 @@
             var newArr = __.compactDeep([0, 1, false, 2, '', 3, [false, 22, '', 33], 4, false, 7])
             console.log(newArr)
         });    
+        display('_.concat(array, [values])', function(){
+            var array = [1];
+            var newArr = __.concat(array, 2, [3], [[4]], 0, [[1,2,3,4]], false, [false, 22, '', 33])
+            console.log(newArr)
+        });    
     })
     </script>
 </head>

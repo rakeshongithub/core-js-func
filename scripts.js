@@ -81,4 +81,11 @@ __.difference = function() {
     return uniqueArr;
 }
 
+// 5. __.drop(array, [n=1]): Creates a slice of array with n elements dropped from the beginning.
+__.drop = function(array, size) {
+    // check arguments length
+    __.isArrayLength(array);
+    return array.slice((size === undefined) ? 1 : size);
+}
+
 }(window, document, undefined));

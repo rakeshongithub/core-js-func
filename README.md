@@ -3,6 +3,14 @@ JavaScript functional programing.
 
 # “Array” Methods
 
+[__.chunk](https://github.com/rakeshongithub/core-js-func#__chunkarray-size)<br/>
+[__.compact](https://github.com/rakeshongithub/core-js-func#__compactarray)<br/>
+[__.compactDeep](https://github.com/rakeshongithub/core-js-func#__compactdeeparray)<br/>
+[__.concat](https://github.com/rakeshongithub/core-js-func#__concatarray-values)<br/>
+[__.difference](https://github.com/rakeshongithub/core-js-func#__differencearray-values)<br/>
+[__.drop](https://github.com/rakeshongithub/core-js-func#__droparray-n1)<br/>
+
+
 #### `__.chunk(array, [size])`
 Creates an array of elements split into groups the length of size. If array can't be split evenly, the final chunk will be the remaining elements.
 

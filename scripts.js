@@ -104,7 +104,7 @@
 	// 7. __.dropRightWhile(array, [predicate=_.identity]): Creates a slice of array excluding elements dropped from the end. Elements are dropped until predicate returns falsey. The predicate is invoked with three arguments: (value, index, array).
 	__.dropRightWhile = function (array, predicate) {
 		// check arguments length
-		if(__.isValidArray(array)){
+		if(__.isValidArray(array) || !predicate){
 			return [];
 		}
 		return array.filter(function (value, index) {
@@ -124,6 +124,9 @@
 	// *****************************************************
 
 	__.isMatch = function (object, source) {
+		if(!object || !source){
+			return false;
+		}
 		var values = Object.keys(source).map(function (item) {
 			if (object.hasOwnProperty(item)) {
 				return object[item] === source[item];
@@ -134,12 +137,20 @@
 		});
 	};
 
+	__.objectLength = function(obj){
+		return Object.keys(obj || {}).length;
+	};
+
+	__.isEqual = function(firstObject, secondOther){
+		var sameLength = __.objectLength(firstObject) === __.objectLength(secondOther);
+		return sameLength && __.isMatch(firstObject, secondOther);
+	};
+
 	// *****************************************************
 	// UTILS FUNCTION
 	// *****************************************************
 	__.isValidArray = function (array) {
 		var length = array == null ? 0 : array.length;
-		console.log(!length,'----');
 		return !length
 	};
 

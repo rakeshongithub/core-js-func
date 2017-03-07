@@ -10,6 +10,7 @@ JavaScript functional programing.
 [__.difference](https://github.com/rakeshongithub/core-js-func#__differencearray-values)<br/>
 [__.drop](https://github.com/rakeshongithub/core-js-func#__droparray-n1)<br/>
 [__.dropRight](https://github.com/rakeshongithub/core-js-func#__droprightarray-n1)<br/>
+[__.dropRightWhile](https://github.com/rakeshongithub/core-js-func#__droprightwhilearray-predicate)<br/>
 
 
 #### `__.chunk(array, [size])`
@@ -106,4 +107,23 @@ __.dropRight([1, 2, 3], 5);
  
 __.dropRight([1, 2, 3], 0);
 // => [1, 2, 3]
+```
+
+#### `__.dropRightWhile(array, [predicate])`
+Creates a slice of array excluding elements dropped from the end. Elements are dropped until predicate returns falsey. The predicate is invoked with three arguments: (value, index, array).
+
+##### Example
+```javascript
+var users = [
+  { 'user': 'barney',  'active': true },
+  { 'user': 'fred',    'active': false },
+  { 'user': 'pebbles', 'active': false }
+];
+ 
+__.dropRightWhile(users, function(o) { return !o.active; });
+// => objects for ['barney']
+ 
+// The `_.matches` iteratee shorthand.
+__.dropRightWhile(users, { 'user': 'pebbles', 'active': false });
+// => objects for ['barney', 'fred']
 ```

@@ -3,14 +3,14 @@ JavaScript functional programing.
 
 # “Array” Methods
 
-[__.chunk](https://github.com/rakeshongithub/core-js-func#__chunkarray-size)<br/>
-[__.compact](https://github.com/rakeshongithub/core-js-func#__compactarray)<br/>
-[__.compactDeep](https://github.com/rakeshongithub/core-js-func#__compactdeeparray)<br/>
-[__.concat](https://github.com/rakeshongithub/core-js-func#__concatarray-values)<br/>
-[__.difference](https://github.com/rakeshongithub/core-js-func#__differencearray-values)<br/>
-[__.drop](https://github.com/rakeshongithub/core-js-func#__droparray-n1)<br/>
-[__.dropRight](https://github.com/rakeshongithub/core-js-func#__droprightarray-n1)<br/>
-[__.dropRightWhile](https://github.com/rakeshongithub/core-js-func#__droprightwhilearray-predicate)<br/>
+[__.chunk](#__chunkarray-size)<br/>
+[__.compact](#__compactarray)<br/>
+[__.compactDeep](#__compactdeeparray)<br/>
+[__.concat](#__concatarray-values)<br/>
+[__.difference](#__differencearray-values)<br/>
+[__.drop](#__droparray-n1)<br/>
+[__.dropRight](#__droprightarray-n1)<br/>
+[__.dropRightWhile](#__droprightwhilearray-predicate)<br/>
 
 
 #### `__.chunk(array, [size])`

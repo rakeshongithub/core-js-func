@@ -12,51 +12,73 @@
             {id: 4, name: "Len", cost: 30, units: 70, category: 2},
             {id: 6, name: "Ken", cost: 90, units: 20, category: 1},
         ];
+        var users = [
+            { 'user': 'barney', 'active': true },
+            { 'user': 'fred', 'active': false },
+            { 'user': 'pebbles', 'active': false }
+        ];
     </script>
     <script src="scripts.js"></script>
     <script>
-    // Display Util Function
-    function display(title, fn){
-        console.group(title);
-        fn();
-        console.groupEnd();
-    }
+        // Display Util Function
+        function display(title, fn) {
+            console.group(title);
+            fn();
+            console.groupEnd();
+        }
 
-    // Execute Model Functions
-    display('Function Programing', function(){
-        display('__.chunk(array, [size])', function(){
-            var newArr = __.chunk([1,2,3,4,5,6,7,8,9,[11,22,33,44,55,66,77,88,99]], 4)
-            console.log(newArr)
-        });    
-        display('__.compact(array)', function(){
-            var newArr = __.compact([0, 1, false, 2, '', 3, [false, 22, '', 33], 4, false, 7])
-            console.log(newArr)
-        });    
-        display('__.compactDeep(array)', function(){
-            var newArr = __.compactDeep([0, 1, false, 2, '', 3, [false, 22, '', 33], 4, false, 7])
-            console.log(newArr)
-        });    
-        display('__.concat(array, [values])', function(){
-            var array = [1];
-            var newArr = __.concat(array, 2, [3], [[4]], 0, [[1,2,3,4]], false, [false, 22, '', 33])
-            console.log(newArr)
-        });    
-        display('__.difference(array, [values])', function(){
-            var newArr = __.difference([2, 1, 2, 9,88], 2, [3], [[4]], 0, [1,2,3,4], false, [false, 22, '', 33])
-            console.log(newArr)
-        });    
-        display('__.drop(array, [n=1])', function(){
-            var newArr = __.drop([1, 2, 3])
-            console.log(newArr)
-        });    
-        display('__.dropRight(array, [n=1])', function(){
-            var newArr = __.dropRight([1, 2, 3, 4, 5], 2)
-            console.log(newArr)
-        });    
-    })
+        // Execute Model Functions
+        display("Functional Programing", function () {
+            display('Array Functions', function () {
+                display('__.chunk(array, [size])', function () {
+                    var newArr = __.chunk([1, 2, 3, 4, 5, 6, 7, 8, 9, [11, 22, 33, 44, 55, 66, 77, 88, 99]], 4)
+                    console.log(newArr)
+                });
+                display('__.compact(array)', function () {
+                    var newArr = __.compact([0, 1, false, 2, '', 3, [false, 22, '', 33], 4, false, 7]);
+                    console.log(newArr)
+                });
+                display('__.compactDeep(array)', function () {
+                    var newArr = __.compactDeep([0, 1, false, 2, '', 3, [false, 22, '', 33], 4, false, 7]);
+                    console.log(newArr)
+                });
+                display('__.concat(array, [values])', function () {
+                    var array = [1];
+                    var newArr = __.concat(array, false, [false, 22, '', 33], [
+                        [4]
+                    ]);
+                    console.log(JSON.stringify(newArr))
+                });
+                display('__.difference(array, [values])', function () {
+                    var newArr = __.difference([2, 1, 2, 9, 88], 2, [3], [[4]], 0, [1, 2, 3, 4], false, [false, 22, '', 33])
+                    console.log(newArr)
+                });
+                display('__.drop(array, [n=1])', function () {
+                    var newArr = __.drop([1, 2, 3]);
+                    console.log(newArr)
+                });
+                display('__.dropRight(array, [n=1])', function () {
+                    var newArr = __.dropRight([1, 2, 3, 4, 5], 2);
+                    console.log(newArr)
+                });
+                display('EXAMPLE 1 : __.dropRightWhile(array, [predicate=_.identity])', function () {
+                    var filterObject = __.dropRightWhile(users, function (o) {
+                        return !o.active;
+                    });
+                    console.log(JSON.stringify(filterObject))
+                });
+            });
+
+            display("Utils Functions", function () {
+                display("__.isMatch(object, source)", function () {
+                    var object = {'a': 2, 'b': 3};
+                    console.log(__.isMatch(object, {'a': 2}));
+                });
+            });
+        })
     </script>
 </head>
 <body>
-    
+
 </body>
 </html>
